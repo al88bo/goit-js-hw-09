@@ -65,7 +65,7 @@ function convertMs(ms) {
 }
 
 function addLeadingZero(obj) {
-  for (key in obj) obj[key] = obj[key].toString().padStart(2, '0');
+  for (const key in obj) obj[key] = obj[key].toString().padStart(2, '0');
   return obj;
 }
 
