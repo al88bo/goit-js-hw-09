@@ -9,7 +9,6 @@ function letsCreatePromises(e) {
   const step = +e.target[1].value;
   const amount = +e.target[2].value;
   for (let position = 1; position <= amount; position++) {
-    console.log(position, delay);
     createPromise(position, delay)
       .then(({ position, delay }) => {
         Notiflix.Notify.success(
@@ -28,8 +27,7 @@ function letsCreatePromises(e) {
 function createPromise(position, delay) {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
-      const shouldResolve = Math.random() > 0.3;
-      if (shouldResolve) {
+      if (Math.random() > 0.3) {
         resolve({ position, delay });
       } else {
         reject({ position, delay });
