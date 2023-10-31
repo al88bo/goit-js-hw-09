@@ -27,11 +27,8 @@ function letsCreatePromises(e) {
 function createPromise(position, delay) {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
-      if (Math.random() > 0.3) {
-        resolve({ position, delay });
-      } else {
-        reject({ position, delay });
-      }
+      if (Math.random() > 0.3) resolve({ position, delay });
+      else reject({ position, delay });
     }, delay);
   });
 }
